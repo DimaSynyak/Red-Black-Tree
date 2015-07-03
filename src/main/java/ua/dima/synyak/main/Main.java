@@ -1,21 +1,43 @@
 package ua.dima.synyak.main;
 
 import ua.dima.synyak.project.BStree;
+import ua.dima.synyak.project.Node;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by root on 7/1/15.
  */
 public class Main {
     public static void main(String[] args) {
-        BStree<Integer, Integer> tree = new BStree<Integer, Integer>();
+        File file = new File("/home/dmitriy/test");
+        List<Node> list = new ArrayList<Node>();
+        try {
+            if (!file.exists()){
+                return;
+            }
 
-        for (int i = 0; i < 100; i++) {
-            tree.add((int)(Math.random() * 10), (int) (Math.random() * 10));
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            Node root = null;
+            while (true){
+                String str = reader.readLine();
+                if (str == null){
+                    break;
+                }
+
+                root = Node.insert(root, Integer.parseInt(str));
+            }
+        }
+        catch (Exception e){
+            System.out.println("Error: " + e);
         }
 
-        for (int i = 0; i < 100; i++) {
-            System.out.println(tree.get(i));
-        }
+
 
     }
 }
