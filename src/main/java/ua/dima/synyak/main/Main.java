@@ -30,6 +30,7 @@ public class Main {
 
                 root = Node.insert(root, Integer.parseInt(str));
             }
+            root = root;
         }
         catch (Exception e){
             System.out.println("Error: " + e);
