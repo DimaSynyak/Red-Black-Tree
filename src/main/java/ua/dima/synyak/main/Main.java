@@ -1,6 +1,5 @@
 package ua.dima.synyak.main;
 
-import ua.dima.synyak.project.BStree;
 import ua.dima.synyak.project.Node;
 
 import java.io.BufferedReader;
@@ -8,7 +7,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Created by root on 7/1/15.
