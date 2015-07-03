@@ -30,6 +30,8 @@ public class Main {
 
                 root = Node.insert(root, Integer.parseInt(str));
             }
+            int diameter = Node.diameterOfTree(root, true);
+            System.out.println(diameter);
             root = root;
         }
         catch (Exception e){
